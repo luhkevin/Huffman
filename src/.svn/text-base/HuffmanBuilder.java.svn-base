@@ -1,0 +1,22 @@
+/**
+ * A class that is able to create blank code-books and develop a Huffman
+ * encoding for a given code-book.
+ * @author CIS-121 Staff
+ * @version 3.0 - 10/15/12
+ */
+public class HuffmanBuilder
+{
+
+	/**
+	 * This method receives as input a FreqMapI containing an alphabet
+	 * and the respective frequencies of each character. It returns a new
+	 * {@link CodeBookI}, where each symbol from the input freqmap now has an
+	 * appropriate Huffman encoding.
+	 * @param freqmap The given Frequency Map.
+	 * @return A code-book with Huffman encodings.
+	 */
+	public static CodeBookI buildHuffmanCode(FreqMapI freqmap)
+	{
+		return null;
+	}
+}

@@ -1,0 +1,30 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class HuffmanBuilderTest {
+
+	FreqMap testMap;
+	@Before
+	public void setUp() throws Exception {
+		testMap = new FreqMap();
+		testMap.buildMap("test2.txt");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testBuildHuffmanCode() {
+		CodeBookI testBook = HuffmanBuilder.buildHuffmanCode(testMap);
+		assertEquals(43, testBook.getCodingLength("This is a test."));
+				
+		//You need to add more tests here, including checking the accuracy of 
+		//actual codings and decodings rather than just coding length
+	}
+
+}

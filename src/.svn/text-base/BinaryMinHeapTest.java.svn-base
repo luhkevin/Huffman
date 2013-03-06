@@ -1,0 +1,41 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class BinaryMinHeapTest {
+
+	BinaryMinHeap<Integer> testheap;
+			
+	@Before
+	public void setUp() throws Exception {
+		testheap = new BinaryMinHeap<Integer>(Integer.class);
+	}
+
+	@Test
+	public void testGetUnderlyingArray() {
+		testheap.insert(3);
+		Integer[] expected = new Integer[127];
+		expected[0] = new Integer(3);
+		assertArrayEquals(expected, testheap.getUnderlyingArray());
+	}
+
+	@Test
+	public void testIsEmpty() {
+		testheap.insert(7);
+		assertFalse(testheap.isEmpty());
+		testheap.removeMin();
+		assertTrue(testheap.isEmpty());
+	}
+
+	@Test
+	public void testRemoveMin() {
+		testheap.insert(8);
+		testheap.insert(3);
+		assertEquals(new Integer(3), testheap.removeMin());
+	}
+
+
+}
